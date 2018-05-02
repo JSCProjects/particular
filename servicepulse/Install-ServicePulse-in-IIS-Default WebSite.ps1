@@ -66,7 +66,7 @@ function SetMimeType() {
 
     if (!(Get-WebConfigurationProperty $website -Filter system.webServer/staticContent -Name collection[fileExtension="$ext"])) 
     { 
-        Add-WebConfigurationProperty $website -Filter system.webServer/staticContent -Name "." -Value @{fileExtension='$ext';mimeType='$mimeType'};
+        Add-WebConfigurationProperty $website -Filter system.webServer/staticContent -Name "." -Value @{fileExtension="$ext";mimeType="$mimeType"};
     }
 }
 
